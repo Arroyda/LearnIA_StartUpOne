@@ -1,4 +1,41 @@
-h1 {
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+* {
+  font-family: 'JetBrains Mono';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #222128;
+}
+.login {
+  width: auto;
+  height: auto;
+  background-color: #3c3a46;
+  margin: 15% 25%;
+}
+
+.login-title {
+  padding: 105px 310px 61px 310px;
+}
+input {
+  margin-left: 310px;
+  margin-bottom: 26px;
+}
+
+.entrar{
+  margin-top: 40px;
+  margin-left: 400px;
+  margin-bottom: 20px;
+}
+form {
   color: white;
-  
+}
+
+form ::placeholder {
+  color: white;
+}
+
+form button {
 }

@@ -9,4 +9,9 @@
   padding: 0;
   font-family: Arial;
   box-sizing: border-box;
+  
+}
+
+body{
+  background-color: #222128;
 }
