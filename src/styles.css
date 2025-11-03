@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* body {
   background-color: #1E1E26;
-  overflow-x: hidden;
+
 } */
 
 * {
@@ -14,4 +14,5 @@
 
 body{
   background-color: #222128;
+    overflow-x: hidden;
 }

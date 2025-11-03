@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
 
 body {
@@ -16,11 +17,21 @@ body {
 }
 
 .login {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.box {
   background-color: #3c3a46;
   padding: 60px;
   width: 1041px;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   display: flex;
   justify-content: center;
 }
@@ -28,7 +39,6 @@ body {
 .login-title {
   text-align: center;
   margin-bottom: 40px;
-  color: white;
 }
 
 input {
@@ -40,21 +50,20 @@ input {
   padding-left: 25px;
   margin-bottom: 26px;
   color: white;
-  box-shadow: 4px 5px 5px rgba(0,0,0,0.4);
+  box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.4);
   border: none;
 }
 
-input::placeholder{
+input::placeholder {
   color: white;
 }
 
 .entrar {
   width: 243px;
   height: 50px;
-  color: white;
   border-radius: 15px;
   background-color: #3c4989;
-  box-shadow: 4px 5px 5px rgba(0,0,0,0.4);
+  box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.4);
   border: none;
   margin: 20px auto 30px auto;
   display: block;
@@ -63,4 +72,9 @@ input::placeholder{
 .social-buttons img {
   width: 29px;
   height: 29px;
+}
+
+button {
+  background: none;
+  border: none;
 }

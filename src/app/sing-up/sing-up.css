@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+* {
+  font-family: 'JetBrains Mono';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  background-color: #222128;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.box {
+  display: flex;
+  background-color: #3c3a46;
+  padding: 60px;
+  width: 1041px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  justify-content: center;
+}
+.login {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cadastro {
+  display: block;
+  background-color: #5e5c6b;
+  width: 426px;
+  height: 50px;
+  border-radius: 15px;
+  padding-left: 25px;
+  margin-bottom: 26px;
+  margin: 0 auto 26px;
+  color: white;
+  box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.4);
+  border: none;
+}
+
+.termos {
+  width: 426px;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: white;
+}
+
+button {
+  width: 243px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: #3c4989;
+  box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.4);
+  border: none;
+  margin: 20px auto 30px auto;
+  display: block;
+}
