@@ -31,7 +31,6 @@ body {
   color: white;
 }
 
-/* inputs */
 input {
   display: block;
   background-color: #5e5c6b;
@@ -49,7 +48,6 @@ input::placeholder{
   color: white;
 }
 
-/* botão entrar */
 .entrar {
   width: 243px;
   height: 50px;
@@ -62,7 +60,6 @@ input::placeholder{
   display: block;
 }
 
-/* botoes sociais */
 .social-buttons img {
   width: 29px;
   height: 29px;
