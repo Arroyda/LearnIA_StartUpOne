@@ -6,36 +6,64 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #222128;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
+
 .login {
-  width: auto;
-  height: auto;
   background-color: #3c3a46;
-  margin: 5% 25%;
+  padding: 60px;
+  width: 1041px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: center;
 }
 
 .login-title {
-  padding: 105px 310px 61px 310px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
 }
+
+/* inputs */
 input {
-  margin-left: 310px;
+  display: block;
+  background-color: #5e5c6b;
+  width: 426px;
+  height: 50px;
+  border-radius: 15px;
+  padding-left: 25px;
   margin-bottom: 26px;
+  color: white;
+  box-shadow: 4px 5px 5px rgba(0,0,0,0.4);
+  border: none;
 }
 
-.entrar{
-  margin-top: 40px;
-  margin-left: 400px;
-  margin-bottom: 20px;
-}
-form {
+input::placeholder{
   color: white;
 }
 
-form ::placeholder {
+/* botão entrar */
+.entrar {
+  width: 243px;
+  height: 50px;
   color: white;
+  border-radius: 15px;
+  background-color: #3c4989;
+  box-shadow: 4px 5px 5px rgba(0,0,0,0.4);
+  border: none;
+  margin: 20px auto 30px auto;
+  display: block;
 }
 
-form button {
+/* botoes sociais */
+.social-buttons img {
+  width: 29px;
+  height: 29px;
 }
