@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+* {
+  font-family: 'JetBrains Mono';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+.destaques {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  display: flex;
+  background-color: #222128;
+  color: white;
+  padding: 5%;
+  overflow-x: hidden;
+  margin-bottom: 5%;
+}
+
+.card-title {
+  padding-bottom: 1.25%;
+  font-size: 24px;
+}
+
+.card {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: #3c3a46;
+  padding: 10%;
+  color: white;
+  border-radius: 30px;
+}
+
+.col-md-3 {
+  width: 18rem;
+  margin-right: 5%;
+}
+
+.card-title {
+  margin-top: 10%;
+}
+
+.card-text {
+  margin: 10% 0% 10%;
+}
+
+.card-img-top {
+  border-radius: 10px;
+}
+
+.btn {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 2% 4%;
+  background-color: #3c4989;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.chatbot {
+  background-color: #3c3a46;
+}
+
+.box-title {
+  text-align: center;
+  padding-top: 52px;
+  padding-bottom: 64px;
+}
+
+.subtitle {
+  font-size: 34px;
+}
+
+.title {
+  font-size: 60px;
+}
+
+.text-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 48px;
+}
+
+.text-field input {
+  width: 845px;
+  height: 50px;
+  border-radius: 41px;
+  border: none;
+  background: #5e5c6b;
+  color: white;
+  padding-left: 17px;
+}
+
+input::placeholder {
+  color: white;
+}
+
+.links-rapidos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colunas {
+  column-count: 2;
+  column-gap: 70px;
+  list-style-type: disc;
+  padding-bottom: 52px;
+}
+
+.colunas li {
+  font-size: 20px;
+  line-height: 40px;
+}

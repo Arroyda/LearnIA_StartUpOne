@@ -19,7 +19,6 @@ header {
 
 }
 
-/* Logo */
 .logo {
   color: white;
   font-size: 24px;
@@ -27,7 +26,6 @@ header {
   margin-left: 50px;
 }
 
-/* Centro */
 .header-center {
   display: flex;
   align-items: center;
@@ -61,7 +59,6 @@ header input::placeholder {
   
 }
 
-/* Menus */
 .nav-item, .nav-link {
   gap: 20px;
   list-style: none;
