@@ -24,6 +24,7 @@ h1 {
   background-color: #222128;
   color: white;
   padding: 5%;
+  padding-bottom: 0;
   overflow-x: hidden;
   margin-bottom: 5%;
 }
@@ -72,6 +73,7 @@ h1 {
 
 .chatbot {
   background-color: #3c3a46;
+  margin: 5% 0;
 }
 
 .box-title {
