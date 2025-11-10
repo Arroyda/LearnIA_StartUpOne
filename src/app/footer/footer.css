@@ -5,3 +5,44 @@
   box-sizing: border-box;
   color: white;
 }
+
+.footer {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    background-color: #5e5c6b;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    background-color: #5e5c6b;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer .container ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+
+.footer .container li {
+    display: flex;
+    margin: 0.5rem;
+}
+
+.footer .container p {
+    text-align: center;
+    margin: 0.5rem auto;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

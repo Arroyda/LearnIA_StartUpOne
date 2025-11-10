@@ -1,0 +1,31 @@
+* {
+  font-family: 'JetBrains Mono';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+.plans-title{
+    margin: 2.5%;
+}
+
+.card{
+    background-color: #3c3a46 ;
+    padding: 5% 15%;
+    margin-left: 15%;
+    margin-bottom: 20%;
+}
+
+.card-header{
+    margin-bottom: 5%;
+}
+
+.card-title{
+    margin-bottom: 2.5%;
+}
+
+.btn{
+    margin: 7.5% 0;
+    padding: 2.5%;
+}
