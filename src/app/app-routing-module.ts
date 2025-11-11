@@ -8,6 +8,7 @@ import { Plans } from './plans/plans';
 import { Login } from './login/login';
 import { SingUp } from './sing-up/sing-up';
 import { Home } from './home/home';
+import { LandingPage } from './landing-page/landing-page';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'plans', component: Plans},
   {path: 'login', component: Login},
   {path: 'register', component: SingUp},
+  {path: 'landingpage', component: LandingPage},
   {path: '**', component: PageNotFound}
 ];
 

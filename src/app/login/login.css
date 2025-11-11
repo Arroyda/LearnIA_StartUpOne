@@ -1,4 +1,81 @@
-h1 {
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+* {
+  font-family: 'JetBrains Mono';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   color: white;
+}
+
+body {
+  background-color: #222128;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.box {
+  background-color: #3c3a46;
+  padding: 60px;
+  width: 1041px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+input {
+  display: block;
+  background-color: #5e5c6b;
+  width: 426px;
+  height: 50px;
+  border-radius: 15px;
+  padding-left: 25px;
+  margin-bottom: 26px;
+  color: white;
+  box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.4);
+  border: none;
+}
+
+input::placeholder {
+  color: white;
+}
+
+.entrar {
+  width: 243px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: #3c4989;
+  box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.4);
+  border: none;
+  margin: 20px auto 30px auto;
+  display: block;
+}
+
+.social-buttons img {
+  width: 30px;
+  height: 30px;
   
+}
+
+button {
+  background: none;
+  border: none;
 }

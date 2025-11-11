@@ -13,6 +13,8 @@ import { Login } from './login/login';
 import { SingUp } from './sing-up/sing-up';
 import { Home } from './home/home';
 import { PageNotFound } from './page-not-found/page-not-found';
+import { Chatbot } from './chatbot/chatbot';
+import { LandingPage } from './landing-page/landing-page';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { PageNotFound } from './page-not-found/page-not-found';
     Login,
     SingUp,
     Home,
-    PageNotFound
+    PageNotFound,
+    Chatbot,
+    LandingPage
   ],
   imports: [
     BrowserModule,
