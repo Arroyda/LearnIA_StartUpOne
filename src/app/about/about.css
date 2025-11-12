@@ -1,19 +1,19 @@
 * {
-  font-family: 'JetBrains Mono';
+  font-family: JetBrains ;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: white;
 }
 
-.container{
-    margin: 5%;
+.container {
+  margin: 5%;
 }
 
-h1{
-    margin: 5% 0;
+h1 {
+  margin: 5% 0;
 }
 
-h3{
-    font-weight: 200;
+h3 {
+  font-weight: 200;
 }
