@@ -1,0 +1,109 @@
+* {
+  font-family: JetBrains;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  display: flex;
+}
+
+.left-menu {
+  background: #3b3a46ff;
+  width: 281px;
+  height: auto;
+  h1 {
+    font-size: 24px;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 10%;
+  }
+  ul {
+    font-size: 20px;
+    text-align: center;
+    list-style-type: none;
+    text-align: center;
+    line-height: 3rem;
+  }
+}
+
+.ebook {
+  padding: 5% 15%;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.ebook-carousel{
+  position: relative;
+    padding: 10%;
+    padding-top: 0%;
+    
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5%;
+}
+
+.carousel-slide{
+      display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  width: 100%;
+}
+
+
+.ebook-input {
+  input {
+    width: 550px;
+    height: 38px;
+    border-radius: 41px;
+    border: none;
+    background: #5e5c6b;
+    color: white;
+    padding-left: 17px;
+    box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  input::placeholder {
+    color: white;
+  }
+}
+
+.right-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #5e5c6bff;
+  width: 10%;
+  height: 100%;
+  border-radius: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 5%;
+}
+
+.right-menu {
+  h1 {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 10%;
+  }
+  ul {
+    font-size: 18px;
+    list-style-type: none;
+    text-align: center;
+    line-height: 3rem;
+  }
+}
+.right-menu-text {
+  padding-top: 50%;
+  padding-bottom: 50%;
+}

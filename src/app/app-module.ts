@@ -12,9 +12,10 @@ import { Plans } from './plans/plans';
 import { Login } from './login/login';
 import { SingUp } from './sing-up/sing-up';
 import { Home } from './home/home';
-import { PageNotFound } from './page-not-found/page-not-found';
 import { Chatbot } from './chatbot/chatbot';
 import { LandingPage } from './landing-page/landing-page';
+import { Ebook } from './ebook/ebook';
+import { PageNotFound } from './page-not-found/page-not-found';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LandingPage } from './landing-page/landing-page';
     Home,
     PageNotFound,
     Chatbot,
-    LandingPage
+    LandingPage,
+    Ebook,
   ],
   imports: [
     BrowserModule,
