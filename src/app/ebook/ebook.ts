@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './ebook.css'
 })
 export class Ebook {
-
+  pdfUrl = "/assets/ebook_powerbi_completo.pdf";
 }
+

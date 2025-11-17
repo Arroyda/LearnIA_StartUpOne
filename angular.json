@@ -29,14 +29,16 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "public"
               },
               {
                 "glob": "bootstrap.bundle.min.js",
                 "input": "node_modules/bootstrap/dist/js",
-                "output": "/assets/"
+                "output": "assets/"
               }
             ],
             "styles": [
@@ -92,14 +94,16 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "public"
               },
               {
                 "glob": "bootstrap.bundle.min.js",
                 "input": "node_modules/bootstrap/dist/js",
-                "output": "/assets/"
+                "output": "assets/"
               }
             ],
             "styles": [

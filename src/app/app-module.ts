@@ -32,7 +32,7 @@ import { PageNotFound } from './page-not-found/page-not-found';
     PageNotFound,
     Chatbot,
     LandingPage,
-    Ebook,
+    Ebook
   ],
   imports: [
     BrowserModule,

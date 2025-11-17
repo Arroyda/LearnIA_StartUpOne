@@ -1,1 +1,246 @@
-<p>profile works!</p>
+<!--
+Página de Perfil (exemplo completo)
+Como separar em arquivos:
+- index.html  -> conteúdo abaixo (remova as tags <style> e <script>)
+- styles.css  -> copie o conteúdo dentro de <style>
+- app.js      -> copie o conteúdo dentro de <script>
+-->
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perfil — Página Exemplo</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <h1>Minha Conta</h1>
+            <div style="color:var(--muted); font-size:14px">Bem-vindo(a)</div>
+        </div>
+
+        <div class="layout">
+            <!-- Coluna esquerda: perfil e progresso -->
+            <div class="profile-card">
+                <div class="avatar-row">
+                    <img id="profilePhoto" class="avatar" src="/assets/imagens/jose.jpg" alt="Foto do usuário">
+                    <div class="info">
+                        <label for="fullName">Nome completo</label>
+                        <input type="text" disabled id="fullName" class="input" placeholder="Seu nome completo"
+                            value="João da Silva" />
+
+                        <label for="email">E‑mail</label>
+                        <input type="text" disabled id="email" class="input" placeholder="seu@exemplo.com"
+                            value="joao@example.com" />
+
+                        <label for="cpf">CPF</label>
+                        <input type="text" disabled id="cpf" class="input" placeholder="000.000.000-00" maxlength="14"
+                            value="123.456.789-10" />
+
+                        <div class="controls">
+                            <label style="display:inline-flex; align-items:center; gap:8px; margin-top:6px;">
+                                <input id="photoInput" type="file" accept="image/*" style="display:none" />
+                                <button id="btnUpload" class="btn btn-ghost" type="button">Trocar foto</button>
+                            </label>
+                            <button id="btnSave" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-wrap">
+                    <div style="display:flex; align-items:center; justify-content:space-between">
+                        <strong>Barra para conquistar</strong>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="progress-bar" aria-hidden="true">
+                        <div id="progressFill" class="progress-fill" style="width:0%"></div>
+                    </div>
+                    <div class="progress-meta">
+                        <small class="muted">Conquistas: <span id="conquistasCount">0</span></small>
+                        <div>
+                            <button id="addPoint" class="btn btn-ghost">+ Ponto</button>
+                            <button id="resetProgress" class="btn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Coluna direita: cards -->
+            <div>
+                <div class="cards-section">
+                    <div style="display:flex; justify-content:space-between; align-items:center">
+                        <strong>Meus Cards</strong>
+                        <div>
+                            <button id="addCardBtn" class="btn btn-primary">Adicionar card</button>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid" id="cardsGrid">
+                        <!-- cards serão inseridos aqui dinamicamente -->
+                        <div class="card">
+                            <h3>Card Exemplo</h3>
+                            <p>Descrição curta do card. Use este espaço para links, progresso ou ações.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- espaço para outras seções -->
+                <div style="height:18px"></div>
+                <div class="cards-section">
+                    <strong>Notas</strong>
+                    <textarea id="notes" class="input" style="height:120px; margin-top:10px"
+                        placeholder="Anotações rápidas..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Referências aos elementos — checamos existência para evitar erros que quebram o script
+            const photoInput = document.getElementById('photoInput');
+            const profilePhoto = document.getElementById('profilePhoto');
+            const cpfInput = document.getElementById('cpf');
+            const addPoint = document.getElementById('addPoint');
+            const resetProgress = document.getElementById('resetProgress');
+            const progressFill = document.getElementById('progressFill');
+            const progressPercent = document.getElementById('progressPercent');
+            const conquistasCount = document.getElementById('conquistasCount');
+            const cardsGrid = document.getElementById('cardsGrid');
+            const addCardBtn = document.getElementById('addCardBtn');
+            const btnSave = document.getElementById('btnSave');
+            const btnUpload = document.getElementById('btnUpload');
+
+            // Verificação mínima — se algum elemento essencial estiver faltando, logamos e paramos
+            if (!progressFill || !progressPercent || !conquistasCount || !addPoint || !resetProgress) {
+                console.error('Elementos de progresso faltando no DOM. Verifique IDs: progressFill, progressPercent, conquistasCount, addPoint, resetProgress');
+                return;
+            }
+
+            // Utilidades
+            function escapeHtml(text = '') {
+                return String(text).replace(/[&<>"']/g, function (m) {
+                    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+                });
+            }
+
+            // Foto: quando o input mudar, atualiza a imagem
+            if (photoInput && profilePhoto) {
+                photoInput.addEventListener('change', e => {
+                    const file = e.target.files && e.target.files[0];
+                    if (!file) return;
+                    const url = URL.createObjectURL(file);
+                    profilePhoto.src = url;
+                });
+            }
+
+            // Se houver um botão "Trocar foto", faz ele disparar o input[type=file]
+            if (btnUpload && photoInput) {
+                btnUpload.addEventListener('click', () => photoInput.click());
+            }
+
+            // Máscara simples de CPF (funciona mesmo que o input esteja desabilitado)
+            if (cpfInput) {
+                cpfInput.addEventListener('input', (e) => {
+                    let v = e.target.value.replace(/\D/g, '');
+                    if (v.length > 11) v = v.slice(0, 11);
+                    v = v.replace(/(\d{3})(\d)/, '$1.$2');
+                    v = v.replace(/(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
+                    v = v.replace(/(\d{3})\.(\d{3})\.(\d{3})(\d)/, '$1.$2.$3-$4');
+                    e.target.value = v;
+                });
+            }
+
+            // Progresso — controlado por "conquistas"
+            let conquistas = 46;         // valor inicial para apresentação
+            const maxConquistas = 100;   // definimos escala (100 => 100%)
+
+            function atualizarProgresso() {
+                // evita divisão por zero
+                const pct = maxConquistas === 0 ? 0 : Math.round((conquistas / maxConquistas) * 100);
+                progressFill.style.width = pct + '%';
+                progressFill.setAttribute('aria-valuenow', String(pct));
+                progressPercent.textContent = pct + '%';
+                conquistasCount.textContent = conquistas;
+            }
+
+            // Inicializa barra assim que a página carregar
+            atualizarProgresso();
+
+            // Botões de adicionar/reset
+            addPoint.addEventListener('click', () => {
+                if (conquistas < maxConquistas) {
+                    conquistas++;
+                    atualizarProgresso();
+                }
+            });
+
+            resetProgress.addEventListener('click', () => {
+                conquistas = 0;
+                atualizarProgresso();
+            });
+
+            // Cards dinâmicos (com escape para evitar XSS simples)
+            if (addCardBtn && cardsGrid) {
+                addCardBtn.addEventListener('click', () => {
+                    const title = prompt('Título do card:', 'Novo Card');
+                    if (title === null) return; // usuário cancelou
+                    const description = prompt('Descrição curta:', 'Descrição...') || '';
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `<h3>${escapeHtml(title)}</h3><p>${escapeHtml(description)}</p>`;
+                    cardsGrid.appendChild(card);
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            }
+
+            // Salvamento simples em localStorage
+            if (btnSave) {
+                btnSave.addEventListener('click', () => {
+                    const data = {
+                        name: document.getElementById('fullName')?.value || '',
+                        email: document.getElementById('email')?.value || '',
+                        cpf: cpfInput?.value || '',
+                        notes: document.getElementById('notes')?.value || '',
+                        conquistas
+                    };
+                    try {
+                        localStorage.setItem('perfil-demo', JSON.stringify(data));
+                        alert('Dados salvos localmente (localStorage)');
+                    } catch (err) {
+                        console.error('Erro ao salvar localStorage', err);
+                        alert('Não foi possível salvar os dados no navegador.');
+                    }
+                });
+            }
+
+            // Carregar estado salvo (se existir)
+            (function load() {
+                const saved = localStorage.getItem('perfil-demo');
+                if (!saved) return;
+                try {
+                    const obj = JSON.parse(saved);
+                    if (document.getElementById('fullName')) document.getElementById('fullName').value = obj.name || '';
+                    if (document.getElementById('email')) document.getElementById('email').value = obj.email || '';
+                    if (cpfInput) cpfInput.value = obj.cpf || '';
+                    if (document.getElementById('notes')) document.getElementById('notes').value = obj.notes || '';
+                    if (typeof obj.conquistas === 'number') conquistas = obj.conquistas;
+                    atualizarProgresso();
+                } catch (e) {
+                    console.warn('Não foi possível carregar estado salvo:', e);
+                }
+            })();
+
+        }); // DOMContentLoaded
+    </script>
+
+</body>
+
+</html>
